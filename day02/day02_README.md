@@ -1,2 +1,4 @@
-issue 1 https://github.com/Gilithelegend/Gilithelegend.github.io/issues/1#issue-6048890992
-issue 2 https://github.com/alonp1206/alonp1206.github.io/issues/2#issue-6049008944
+issues: found 2 sites that I had comments for and created issues for them.
+new repository: created a new repository for the assignments and cloned it through my local VS code. 
+python file: wrote the line for printing hello world and tested it in VS code. then committed and synced the repository.
+
