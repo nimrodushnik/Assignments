@@ -2,7 +2,7 @@ I have data from a Pavlovian behavioral experiment, where each trial mice get a 
 The program that runs the experiment generates a .mat file with documentation of the mouse's licks.
 I used copilot to create a python code that generates a raster plot of the licks.
 
-prompt:
+Prompt:
 "I have a MATLAB `.mat` file containing data from an experiment where mice lick for a reward following an odor cue.
 Each trial is stored as a separate structure and the licking data can be found in `TrialN.AnalogData.Button.Btn1`.
 Write a simple Python script that:
