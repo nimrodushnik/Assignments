@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lick Raster Analysis</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6fa;
+            color: #20324d;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px #00000012;
+        }
+
+        h1 {
+            color: #20324d;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+
+        p {
+            color: #53647c;
+            line-height: 1.6;
+        }
+
+        input {
+            display: block;
+            margin: 25px 0 15px;
+            padding: 12px;
+            border: 1px solid #dce3ed;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3568b7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #254e8b;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .error {
+            color: #c0392b;
+        }
+
+        .subtitle {
+            color: #8490a0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Lick Raster Analysis</h1>
+        <div class="subtitle">Behavioral Data Visualization</div>
+
+        <p>
+            Upload a MATLAB (.mat) file containing behavioral trial data
+            to generate a lick raster plot.
+            Each row represents a trial, and each dot represents
+            a detected licking event.
+            Red dashed lines indicate odor onset and offset.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".mat" required>
+            <button type="submit">Generate Raster Plot</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if plot %}
+            <h2>Raster Plot</h2>
+            <img src="data:image/png;base64,{{ plot }}">
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
